@@ -69,12 +69,13 @@ _config_prompt() {
         local symbol="%F{$COLOR_FAILURE}$PS_SYMBOL%f"
     fi
 
+    local user="%S%F{51}%n%f%s"
     local cwd="%F{$COLOR_CWD}%~%f"
-    local git="%F{$COLOR_GIT}$(_git_info)%f"
+    local git="%B%F{$COLOR_GIT}$(_git_info)%f%b"
     local time="%F{$COLOR_TIME}%D{%H:%M:%S}%f"
 
-    PROMPT="$cwd$git $symbol "
-    RPROMPT="$time"
+    PROMPT="$user:$cwd$git $symbol "
+    # RPROMPT="$time"
 }
 
 
